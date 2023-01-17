@@ -31,6 +31,11 @@ int priority(char p){
     if (p == '*' || p =='/'){
         return 2;
     }
+    if (p == '^')
+    {
+         return 3;
+    }
+    
     // return 0;
 }
 
@@ -48,8 +53,8 @@ int main(){
         {
             printf("%c",*p);
         }
-
-        else if (*p=='(')
+        
+        else if (*p=='(' || top==-1)
         {
             push(*p);
         }
