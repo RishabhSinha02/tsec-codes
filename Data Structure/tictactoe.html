@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>XO Game</title>
+	<style>
+		.container {
+			display: flex;
+			flex-wrap: wrap;
+			width: 300px;
+			height: 300px;
+			margin: 0 auto;
+			border: 1px solid #ccc;
+			box-sizing: border-box;
+		}
+		.cell {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 100px;
+			height: 100px;
+			font-size: 50px;
+			font-weight: bold;
+			cursor: pointer;
+			box-sizing: border-box;
+		}
+		.cell:hover {
+			background-color: #f5f5f5;
+		}
+		.cell.x {
+			color: #f00;
+		}
+		.cell.o {
+			color: #00f;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="cell"></div>
+		<div class="cell"></div>
+		<div class="cell"></div>
+		<div class="cell"></div>
+		<div class="cell"></div>
+		<div class="cell"></div>
+		<div class="cell"></div>
+		<div class="cell"></div>
+		<div class="cell"></div>
+	</div>
+
+	<script>
+		let cells = document.querySelectorAll('.cell');
+		let currentPlayer = 'x';
+
+		cells.forEach(function(cell) {
+			cell.addEventListener('click', function() {
+				if (!cell.innerHTML) {
+					cell.innerHTML = currentPlayer;
+					cell.classList.add(currentPlayer);
+					currentPlayer = currentPlayer === 'x' ? 'o' : 'x';
+				}
+			});
+		});
+	</script>
+</body>
+</html>

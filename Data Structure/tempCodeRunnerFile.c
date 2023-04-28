@@ -1,2 +1,1 @@
-
-    new_node->prev = ptr->prev;
+add(10,

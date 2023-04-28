@@ -82,5 +82,4 @@ int main(){
     inserAtLast(0);
     inserAtPos(3,30);
     display();
-    
 }
